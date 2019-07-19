@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB315E48-D03A-47C4-8851-A769586FEF3D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Rina.Client</RootNamespace>
+    <AssemblyName>Rina.Client</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>8192</FileAlignment>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Rina.Client.ico</ApplicationIcon>
+    <StartupObject>Sanchez.Patcher.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="-Module-.cs" />
+    <Compile Include="Costura\AssemblyLoader.cs" />
+    <Compile Include="Cyclic\Redundancy\Check\CRC.cs" />
+    <Compile Include="ProcessedByFody.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Sanchez\Patcher\Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sanchez\Patcher\Client.Designer.cs">
+      <DependentUpon>Client.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sanchez\Patcher\c_AntiKill.cs" />
+    <Compile Include="Sanchez\Patcher\pForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sanchez\Patcher\pForm.Designer.cs">
+      <DependentUpon>pForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sanchez\Patcher\Program.cs" />
+    <Compile Include="Sanchez\Patcher\Query.cs" />
+    <Compile Include="Sanchez\Patcher\Source_files\Common.cs" />
+    <Compile Include="Sanchez\Patcher\Source_files\Computer.cs" />
+    <Compile Include="Sanchez\Patcher\Source_files\FileChecker.cs" />
+    <Compile Include="Sanchez\Patcher\Source_files\FileDownloader.cs" />
+    <Compile Include="Sanchez\Patcher\Source_files\Functions.cs" />
+    <Compile Include="Sanchez\Patcher\Source_files\Globals.cs" />
+    <Compile Include="Sanchez\Patcher\Source_files\IniParser.cs" />
+    <Compile Include="Sanchez\Patcher\Source_files\ListDownloader.cs" />
+    <Compile Include="Sanchez\Patcher\Source_files\ListProcessor.cs" />
+    <Compile Include="Sanchez\Patcher\Source_files\MessageBoxWrapper.cs" />
+    <Compile Include="Sanchez\Patcher\Source_files\Networking.cs" />
+    <Compile Include="Sanchez\Patcher\Source_files\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sanchez\Patcher\Source_files\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sanchez\Patcher\Source_files\Texts.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Costura\microsoft\qualitytools\testing\fakes\dll.compressed" />
+    <EmbeddedResource Include="Costura\microsoft\visualstudio\vshelp80\dll.compressed" />
+    <EmbeddedResource Include="Costura\microsoft\visualstudio\vshelp\dll.compressed" />
+    <EmbeddedResource Include="Properties\Resources.resources" />
+    <EmbeddedResource Include="Sanchez\Patcher\Client.resources" />
+    <EmbeddedResource Include="Sanchez\Patcher\pForm.resources" />
+    <EmbeddedResource Include="Sanchez\Patcher\Source_files\Settings.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

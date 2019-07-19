@@ -1,0 +1,2 @@
+C:\Users\mehmet\source\repos\Rina.Client\Rina.Client\obj\Debug\Rina.Client.csprojAssemblyReference.cache
+C:\Users\mehmet\source\repos\Rina.Client\Rina.Client\obj\Debug\Rina.Client.csproj.CoreCompileInputs.cache
